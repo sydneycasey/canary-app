@@ -13,14 +13,9 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Runs unit tests
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run test:unit
 ```
 
 ### Customize configuration
