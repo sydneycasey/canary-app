@@ -1,9 +1,7 @@
 # canary-app
 
 ## Notes
-```
-Hello! I left some comments throughout my code, but what I chose to focus on in this challenge was getting the basic requirements working and creating a clean, user-friendly interface. I did get to write a few simple tests with Jest, and implemented vue-material as a frontend framework for some design changes. Looking forward to chatting more with you about the code!
-```
+Hello! I left some comments throughout my code, but what I chose to focus on in this challenge was getting the basic requirements working and creating a clean, user-friendly interface. I did get to write a few simple tests and implemented vue-material as a frontend framework for some design changes. Looking forward to chatting more with you about the code!
 
 ## Project setup
 ```
@@ -15,14 +13,9 @@ npm install
 npm run serve
 ```
 
-### Compiles and minifies for production
+### Runs unit tests
 ```
-npm run build
-```
-
-### Lints and fixes files
-```
-npm run lint
+npm run test:unit
 ```
 
 ### Customize configuration
