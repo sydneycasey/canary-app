@@ -19,7 +19,7 @@
         </md-toolbar>
     </div>
     <!-- Button to make API request. Disabled depending on dates selected -->
-    <md-button class="md-raised md-primary" v-on:click="getAsteroidData" :disabled="isDisabled">
+    <md-button class="md-raised md-primary" @click="getAsteroidData" :disabled="isDisabled">
       Retrieve Closest Asteroids
     </md-button>
     <!-- List of asteroid names returned between selected dates -->
@@ -27,7 +27,7 @@
         <div v-for="asteroid in obj" :key="asteroid.id" class="asteroid-data">
           <md-list class="asteroid-stats">
             <!-- When asteroid name is clicked, display dialog component with selected asteroid passed in-->
-            <md-list-item class="asteroid-name" v-on:click="clicked(asteroid.id)">
+            <md-list-item class="asteroid-name" @click="clicked(asteroid.id)">
               Name: {{asteroid.name}}
             </md-list-item>
             <div v-if="selectedAsteroid && asteroid.id === selectedAsteroid.id">
@@ -50,8 +50,8 @@ export default {
   },
   data() {
     return {
-      asteroidList: null, // list of asteroids returned from API
-      selectedAsteroid: null, // individual asteroid selected to be passed to Dialog component
+      asteroidList: [], // list of asteroids returned from API
+      selectedAsteroid: {}, // individual asteroid selected to be passed to Dialog component
       startDate: null,
       endDate: null,
       isDisabled: true,
@@ -81,7 +81,7 @@ export default {
 
     },
     clicked(id) {
-      // if the user clicks the selected asteroid again, unselect it
+      // if the user clicks the selected asteroid again, deselect it
       // otherwise get data for the newly selected asteroid
       if (this.selectedAsteroid && id === this.selectedAsteroid.id) this.selectedAsteroid = null;
       else {
